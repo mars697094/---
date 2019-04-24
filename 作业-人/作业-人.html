@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+		
+		
+		    body{
+		    	padding-top: 100px;
+		    }
+			div{
+				margin-left: 200px;
+				position: relative;
+			}
+			.torso{
+				-webkit-animation: torso 3s 0s linear infinite;
+			}
+			.right-thigh{
+				bottom: 555px;
+				left: 15px;
+				z-index: -1;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: right-thigh 3s 0s linear infinite;
+				
+			}
+			.left-thigh{
+				bottom: 885px;
+				left: 15px;
+				z-index: -4;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: left-thigh 3s 0s linear infinite;
+				
+			}
+			.left-leg{
+				bottom: 50px;
+				left: -190px;
+				z-index: -3;
+				
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: left-leg 3s  linear infinite;
+			}
+			.right-bicep{
+				left: -190px;
+				bottom: 180px;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: right-bicep 3s 0s linear infinite;
+			}
+			.right-forearm{
+				bottom: 18px;
+				left: -189px;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: right-forearm 3s 0s linear infinite;
+			}
+			.left-bicep{
+				bottom: 440px;
+				left: -190px;
+				z-index: -9;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: left-bicep 3s 0s linear infinite;
+			}
+			.left-forearm{
+				bottom: 20px;
+				left: -186px;
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: left-forearm 3s 0s linear infinite;
+			}
+			.leg{
+				bottom: 40px;
+				left: -190px;
+				z-index: -2;
+
+				-webkit-transform-origin: top left ; 
+				-webkit-animation: shin 3s  linear infinite;
+				
+			}
+			
+			.shin{
+				
+				
+				
+				
+			}
+			.foot{
+				position: relative;
+				right: 88px;
+				top: 15px;
+				
+			}
+			.toes{
+				position: relative;
+				right: -10px;
+				top: 15px;
+				
+			}
+			@-webkit-keyframes torso{
+				from{
+					-webkit-transform:   rotate(5deg) translate( 5px,   0px);
+				}
+				25%{
+					-webkit-transform:  rotate(5deg) translate(-5px, -14px);
+				}
+				50%{
+					-webkit-transform:  rotate(5deg) translate(5px,   0px);
+				}
+				75%{
+					-webkit-transform:  rotate(5deg) translate(-5px, -14px);
+				}
+				to{
+					-webkit-transform:  rotate(5deg) translate(5px,   0px);
+				}
+			}
+			@-webkit-keyframes right-thigh{
+				from{
+					-webkit-transform: rotate(-45deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(10deg) ;
+				}
+				to{
+					-webkit-transform: rotate(-45deg) ;
+				}
+			}
+			@-webkit-keyframes left-thigh{
+				from{
+					-webkit-transform: rotate(10deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(-45deg) ;
+				}
+				to{
+					-webkit-transform: rotate(10deg) ;
+				}
+			}
+			@-webkit-keyframes shin{
+				from{
+					-webkit-transform: rotate(30deg) ;
+				}
+				25%{
+					-webkit-transform: rotate(20deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(20deg) ;
+				}
+				75%{
+					-webkit-transform: rotate(85deg) ;
+				}
+				to{
+					-webkit-transform: rotate(30deg) ;
+				}
+			}
+			@-webkit-keyframes left-leg{
+				from{
+					-webkit-transform: rotate(20deg) ;
+				}
+				25%{
+					-webkit-transform: rotate(85deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(30deg) ;
+				}
+				75%{
+					-webkit-transform: rotate(20deg);
+				}
+				to{
+					-webkit-transform: rotate(20deg) ;
+				}
+			}
+			/*手 	：右手臂（26 ~ -20  ~ 26 ) ，  右小手臂（-10 ~ -45  ~ -10）
+ *		：左手臂（-20 ~ 26  ~ -20 )，左小手臂（-45 ~ -10  ~ -45）*/
+			@-webkit-keyframes right-bicep{
+				from{
+					-webkit-transform: rotate(26deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(-20deg);
+				}
+				to{
+					-webkit-transform: rotate(26deg);
+				}
+			}
+			@-webkit-keyframes right-forearm{
+				from{
+					-webkit-transform: rotate(-10deg);
+				}
+				50%{
+					-webkit-transform: rotate(-45deg);
+				}
+				to{
+					-webkit-transform: rotate(-10deg);
+				}
+			}
+			@-webkit-keyframes left-bicep{
+				from{
+					-webkit-transform: rotate(-20deg) ;
+				}
+				50%{
+					-webkit-transform: rotate(26deg);
+				}
+				to{
+					-webkit-transform: rotate(-20deg);
+				}
+			}
+			@-webkit-keyframes left-forearm{
+				from{
+					-webkit-transform: rotate(-45deg);
+				}
+				50%{
+					-webkit-transform: rotate(-10deg);
+				}
+				to{
+					-webkit-transform: rotate(-45deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="torso">
+			<img src="images/torso.png"/>
+			<div class="right-bicep">
+				<img src="images/right-bicep.png"/>
+				<div class="right-forearm"><img src="images/right-forearm.png"/></div>
+			</div>
+			<div class="left-bicep">
+				<img src="images/left-bicep.png"/>
+				<div class="left-forearm">
+					<img src="images/left-forearm.png"/>
+				</div>
+			</div>
+		</div>
+		<div class="right-thigh">
+			<img src="images/left-thigh.png"/>
+			<div class="leg">
+				<img class="shin" src="images/shin.png"/>
+				<img class="toes" src="images/toes.png"/>
+				<img class="foot" src="images/foot.png"/>
+			
+			</div>
+		</div>
+		<div class="left-thigh">
+			<img src="images/left-thigh.png"/>
+			<div class="left-leg">
+				<img class="shin" src="images/shin.png"/>
+				<img class="toes" src="images/toes.png"/>
+				<img class="foot" src="images/foot.png"/>
+			
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		<div><img src=""/></div>
+		
+	</body>
+</html>

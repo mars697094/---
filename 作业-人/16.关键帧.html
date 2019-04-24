@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.ball{
+				width: 20px;
+				height: 20px;
+				position: fixed;
+				background-color: red;
+				top: 0;
+				left: 50%;
+				border-radius: 50%;
+				
+				-webkit-animation: ball-full 5s 0s linear infinite;
+			}
+			
+			@-webkit-keyframes ball-full{
+				from{
+					top: 0;
+				}
+				
+				50%{
+					top: 500px;
+				}
+				
+				to{
+					top: 0;	
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="ball"></div>
+		
+	</body>
+</html>

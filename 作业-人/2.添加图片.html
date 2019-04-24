@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canvas {
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="800" height="800"></canvas>
+
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			var ctx = canvas.getContext("2d");
+			
+			var image = document.createElement("img");
+			image.setAttribute("src","images/naicha.jpg");
+			
+			image.onload = function(){
+				/**
+				 * 图片对象
+				 * 图片裁切的起始位置X
+				 * 图片裁切的起始位置Y
+				 * 图片裁切的宽度
+				 * 图片裁切的高度
+				 * 放置的位置X
+				 * 放置的位置Y
+				 * 图片显示的宽度
+				 * 图片显示的高度
+				 * 
+				 * **/
+				ctx.drawImage(image,0,0,530,350,200,200,400,400);
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

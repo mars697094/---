@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.box{
+				width: 300px;
+				height: 300px;
+				padding: 50px;
+				margin: 50px auto;
+				border: dotted  40px black;
+				background-image: url(images/naicha.jpg);
+				background-size: 300px auto;
+				background-repeat: no-repeat;
+				/* 
+				 *  背景图起始位置
+				 *  border-box:边框开始
+				 *  content-box:内容区开始
+				 *  padding-box:内边距开始
+				 * */
+				background-origin:border-box;
+				/*
+				 *  背景图裁剪
+				 *  border-box：
+				 *  padding-box
+				 *  content-box
+				 * */
+				background-clip: border-box;
+				/*
+				 * cover:覆盖整个容器，图片不完全
+				 * contain：保证图片完全，但是不一定全部覆盖
+				 * 
+				 * */
+				background-size: 200px;
+				/*
+				 *  背景图的位置
+				 * */
+				background-position: right top;
+			}
+			.box .inner{
+				width: inherit;
+				height: inherit;
+				border: solid 1px red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="box">
+			<div class="inner"></div>
+		</div>
+		
+		
+	</body>
+</html>

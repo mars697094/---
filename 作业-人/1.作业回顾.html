@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#canvas {
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="800" height="800"></canvas>
+
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			var ctx = canvas.getContext("2d");
+			var now = new Date();
+			var Y = now.getFullYear();
+			var M = now.getMonth();
+			var d = now.getDate();
+			var w = now.getDay();
+			var s = now.getSeconds();
+			var m = now.getMinutes();
+			var h = now.getHours();
+
+			ctx.translate(400, 400);
+			ctx.lineCap = "round";
+
+			function drawClock(Y,m,d,w) {
+				ctx.beginPath();
+				ctx.arc(0, 0, 370, 0, Math.PI * 2);
+				ctx.lineWidth = 20;
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+				ctx.font = "bold 50px '黑体'";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				for(var i = 0; i < 60; i++) {
+					ctx.beginPath();
+					var x = 340 * Math.cos(Math.PI / 180 * i * 6);
+					var y = 340 * Math.sin(Math.PI / 180 * i * 6);
+					if(i%5==0){
+						var x = 330 * Math.cos(Math.PI / 180 * i * 6);
+						var y = 330 * Math.sin(Math.PI / 180 * i * 6);
+						var n = (i/5+3)%12;
+						ctx.fillText(n==0?12:n,x,y);
+					}else{
+						ctx.arc(x, y, 3, 0, Math.PI * 2);
+						ctx.fill();
+					}
+					
+				}
+				var week = ['日','一','二','三','四','五','六'];
+				ctx.fillText(Y+"年"+m+"月"+d+"日",0,120);
+				ctx.fillText("星期"+week[w],0,180);
+				
+			}
+
+			function drawSecond(s) {
+
+				ctx.save();
+
+				ctx.rotate(Math.PI / 180 * s * 6);
+
+				ctx.beginPath();
+				ctx.lineTo(0, 60);
+				ctx.lineTo(0, -280);
+
+				ctx.lineWidth = 4;
+				ctx.strokeStyle = "red";
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(0, -220, 15, 0, Math.PI * 2);
+				ctx.stroke();
+
+				ctx.beginPath();
+				ctx.arc(0, 0, 20, 0, Math.PI * 2);
+				ctx.fillStyle = "blue";
+				ctx.fill();
+				ctx.restore();
+				ctx.closePath();
+			}
+
+			function drawMinute(m, s) {
+
+				ctx.save();
+
+				ctx.rotate(Math.PI / 180 * (m * 6 + 6 / 60 * s));
+
+				ctx.beginPath();
+				ctx.lineTo(0, 40);
+				ctx.lineTo(0, -240);
+
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = "black";
+				ctx.stroke();
+
+				ctx.restore();
+				ctx.closePath();
+
+			}
+
+			function drawHour(h, m) {
+
+				ctx.save();
+
+				ctx.rotate(Math.PI / 180 * (h * 30 + 30 / 60 * m));
+
+				ctx.beginPath();
+				ctx.lineTo(0, 30);
+				ctx.lineTo(0, -200);
+
+				ctx.lineWidth = 15;
+				ctx.strokeStyle = "balck";
+				ctx.stroke();
+				ctx.beginPath();
+
+				ctx.restore();
+				ctx.closePath();
+
+			}
+
+			setInterval(function() {
+
+				now = new Date();
+				s = now.getSeconds();
+				m = now.getMinutes();
+				h = now.getHours();
+
+				ctx.clearRect(-400, -400, 800, 800);
+
+				drawClock(now.getFullYear(),now.getMonth()+1,now.getDate(),now.getDay());
+				drawHour(h,m);
+				drawMinute(m,s);
+				drawSecond(s);
+
+			}, 1000);
+
+			drawClock(Y,M+1,d,w);
+			drawHour(h, m);
+			drawMinute(m, s);
+			drawSecond(s);
+		</script>
+	</body>
+
+</html>
